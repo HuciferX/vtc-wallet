@@ -149,13 +149,41 @@ export function RarityReveal({
           </div>
         )}
 
+        {/* Sell on Marketplace CTA */}
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+            window.open(`https://UniversalMarketplace.io/list?chain=${theme.id}&rarity=${rarity.tier}`, '_blank');
+          }}
+          style={{
+            marginTop: 14,
+            padding: '10px 20px',
+            borderRadius: 12,
+            border: '1px solid rgba(0,229,255,0.3)',
+            background: 'linear-gradient(135deg, rgba(0,229,255,0.1), rgba(180,122,255,0.08))',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease',
+          }}>
+          <span style={{
+            fontFamily: "'Orbitron', monospace",
+            fontSize: 11,
+            fontWeight: 900,
+            letterSpacing: '0.06em',
+            background: 'linear-gradient(90deg, #00e5ff, #b47aff)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}>
+            🌐 SELL ON MARKETPLACE
+          </span>
+        </div>
+
         {/* Chain indicator */}
         <Text
           text={`${theme.icon} ${theme.name}`}
           style={{
             color: theme.primary,
             fontSize: 10,
-            marginTop: 12,
+            marginTop: 8,
             opacity: 0.6,
           }}
         />

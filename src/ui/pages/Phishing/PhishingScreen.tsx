@@ -31,7 +31,7 @@ const PhishingScreen = () => {
       <div className="phishing-content">
         {/* Logo & Warning */}
         <div className="phishing-header">
-          <img src={chrome.runtime.getURL('/images/logo/wallet-logo.png')} alt="UniSat" className="phishing-logo" />
+          <img src={chrome.runtime.getURL('/images/logo/wallet-logo.png')} alt="Universal" className="phishing-logo" />
           <div className="phishing-divider" />
           <div className="phishing-warning-icon">
             <svg viewBox="0 0 24 24" fill="none">

@@ -233,6 +233,38 @@ export default function WalletTabScreen() {
             enableRefresh={isSidePanel}
           />
 
+          {/* Universal Marketplace Banner */}
+          <div
+            onClick={() => window.open('https://UniversalMarketplace.io', '_blank')}
+            style={{
+              padding: '14px 16px',
+              borderRadius: 14,
+              border: '1px solid rgba(0,229,255,0.2)',
+              background: 'linear-gradient(135deg, rgba(0,229,255,0.04), rgba(180,122,255,0.03), rgba(0,0,0,0.95))',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              transition: 'all 0.3s ease',
+            }}>
+            <span style={{ fontSize: 28 }}>🌐</span>
+            <div style={{ flex: 1 }}>
+              <div style={{
+                fontFamily: "'Orbitron', monospace",
+                fontSize: 11,
+                fontWeight: 900,
+                letterSpacing: '0.06em',
+                background: 'linear-gradient(90deg, #00e5ff, #b47aff, #ff6eb4)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}>UNIVERSAL MARKETPLACE</div>
+              <div style={{ fontSize: 10, color: 'rgba(232,234,246,0.5)', marginTop: 2 }}>
+                Trade rare ordinals · VTC · BTC · LTC · DOGE
+              </div>
+            </div>
+            <span style={{ fontSize: 12, color: 'rgba(0,229,255,0.6)' }}>→</span>
+          </div>
+
           <WalletActions address={currentAccount?.address} chain={chain} />
 
           <Tabs

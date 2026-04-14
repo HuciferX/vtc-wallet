@@ -203,32 +203,56 @@ export default function OrdinalsInscriptionScreen() {
           )}
 
           {withSend && (
-            <Row fullX>
-              {isNeedToSplit && (
-                <Button
-                  text={t('split')}
-                  icon="split"
-                  preset="default"
-                  full
-                  onClick={(e) => {
-                    dispatch(transactionsActions.reset());
-                    navigate('SplitOrdinalsInscriptionScreen', { inscription });
-                  }}
-                />
-              )}
-              {
-                <Button
-                  text={t('send')}
-                  icon="send"
-                  preset="default"
-                  full
-                  onClick={(e) => {
-                    dispatch(transactionsActions.reset());
-                    navigate('SendOrdinalsInscriptionScreen', { inscription });
-                  }}
-                />
-              }
-            </Row>
+            <Column gap="sm">
+              <Row fullX>
+                {isNeedToSplit && (
+                  <Button
+                    text={t('split')}
+                    icon="split"
+                    preset="default"
+                    full
+                    onClick={(e) => {
+                      dispatch(transactionsActions.reset());
+                      navigate('SplitOrdinalsInscriptionScreen', { inscription });
+                    }}
+                  />
+                )}
+                {
+                  <Button
+                    text={t('send')}
+                    icon="send"
+                    preset="default"
+                    full
+                    onClick={(e) => {
+                      dispatch(transactionsActions.reset());
+                      navigate('SendOrdinalsInscriptionScreen', { inscription });
+                    }}
+                  />
+                }
+              </Row>
+              {/* Sell on Universal Marketplace */}
+              <div
+                onClick={() => {
+                  const chain = 'vtc'; // TODO: get from current chain
+                  const id = inscription.inscriptionId;
+                  window.open(`https://UniversalMarketplace.io/list?inscription=${id}&chain=${chain}`, '_blank');
+                }}
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  borderRadius: 10,
+                  border: '1px solid rgba(0,229,255,0.3)',
+                  background: 'linear-gradient(135deg, rgba(0,229,255,0.08), rgba(180,122,255,0.06))',
+                  cursor: 'pointer',
+                  textAlign: 'center' as const,
+                  transition: 'all 0.2s ease',
+                }}>
+                <span style={{ fontSize: 13, fontWeight: 900, fontFamily: 'Orbitron, monospace', letterSpacing: '0.05em',
+                  background: 'linear-gradient(90deg, #00e5ff, #b47aff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  🌐 SELL ON MARKETPLACE
+                </span>
+              </div>
+            </Column>
           )}
 
           {isNeedToSplit &&

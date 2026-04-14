@@ -607,7 +607,7 @@ function TestAlkanesSign() {
         session: {
           origin: 'https://unisat.io',
           icon: 'https://unisat.io/favicon.ico',
-          name: 'UniSat Wallet'
+          name: 'Universal Wallet'
         }
       }}
     />

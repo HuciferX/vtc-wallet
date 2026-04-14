@@ -2,7 +2,7 @@ import randomstring from 'randomstring';
 
 import { createPersistStore } from '@/background/utils';
 import { CHAINS_MAP, CHANNEL, VERSION } from '@/shared/constant';
-import { UniSatApiClient, createClient } from '@unisat/wallet-api';
+import { UniversalApiClient, createClient } from '@unisat/wallet-api';
 
 import preferenceService from './preference';
 
@@ -12,7 +12,7 @@ interface WalletApiStore {
 
 export class WalletApiService {
   store!: WalletApiStore;
-  private client: UniSatApiClient;
+  private client: UniversalApiClient;
   private clientAddress = '';
   private addressFlag = 0;
   private currentEndpoint = '';
@@ -67,7 +67,7 @@ export class WalletApiService {
 
   updateHeaders = () => {
     const headers: Record<string, string> = {
-      'x-client': 'UniSat Wallet',
+      'x-client': 'Universal Wallet',
       'x-version': VERSION,
       'x-channel': CHANNEL
     };
@@ -88,7 +88,7 @@ export class WalletApiService {
   };
 
   // Expose the client for direct access to all API methods
-  getClient = (): UniSatApiClient => {
+  getClient = (): UniversalApiClient => {
     return this.client;
   };
 

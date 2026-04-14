@@ -1,31 +1,31 @@
 // TODO: write documentation for colors and palette in own markdown file and add links from here
 
 const palette = {
-  white: '#ffffff',
-  white_muted: 'rgba(255, 255, 255, 0.5)',
-  white_muted2: 'rgba(255, 255, 255, 0.2)',
-  white_muted3: 'rgba(255, 255, 255, 0.8)',
-  black: '#000000',
-  black_muted: 'rgba(0, 0, 0, 0.5)',
-  black_muted2: 'rgba(0, 0, 0, 0.)',
+  white: '#e8eaf6',
+  white_muted: 'rgba(232, 234, 246, 0.5)',
+  white_muted2: 'rgba(232, 234, 246, 0.2)',
+  white_muted3: 'rgba(232, 234, 246, 0.8)',
+  black: '#08081e',
+  black_muted: 'rgba(8, 8, 30, 0.5)',
+  black_muted2: 'rgba(8, 8, 30, 0.3)',
 
-  dark: '#1E283C',
+  dark: '#0c0c28',
   grey: '#495361',
   light: '#A2A4AA',
 
-  black_dark: '#2a2626',
+  black_dark: '#101035',
 
-  green_dark2: '#2D7E24',
-  green_dark: '#379a29',
-  green: '#41B530',
-  green_light: '#5ec04f',
+  green_dark2: '#1b5e20',
+  green_dark: '#2e7d32',
+  green: '#00e676',
+  green_light: '#66bb6a',
 
   yellow_dark: '#d5ac00',
-  yellow: '#e3bb5f',
+  yellow: '#ffd700',
   yellow_light: '#fcd226',
 
   red_dark: '#c92b40',
-  red: '#ED334B',
+  red: '#ff5252',
   red_light: '#f05266',
   red_light2: '#f55454',
 
@@ -34,11 +34,14 @@ const palette = {
   blue_light: '#c6dcfd',
 
   orange_dark: '#d9691c',
-  orange: '#FF7B21',
-  orange_light: '#ff8f42',
+  orange: '#ff9800',
+  orange_light: '#ffb74d',
   orange_light2: '#FF7C2A',
 
-  gold: '#eac249'
+  gold: '#ffd700',
+
+  cyan: '#00e5ff',
+  purple: '#b47aff'
 };
 
 export const colors = Object.assign({}, palette, {
@@ -49,25 +52,25 @@ export const colors = Object.assign({}, palette, {
 
   textDim: palette.white_muted,
 
-  background: '#070606',
+  background: '#08081e',
 
-  error: '#e52937',
+  error: '#ff5252',
 
-  danger: 'rgba(245, 84, 84, 0.90)',
+  danger: 'rgba(255, 82, 82, 0.90)',
 
-  card: '#262222',
+  card: 'rgba(12, 12, 40, 0.92)',
   warning: palette.orange,
-  primary: palette.yellow,
+  primary: palette.cyan,
 
-  bg2: '#2a2a2a',
-  bg3: '#434242',
-  bg4: '#383535',
-  search_bar_bg: '#1E1F24',
+  bg2: '#0c0c28',
+  bg3: '#101035',
+  bg4: '#181840',
+  search_bar_bg: '#0c0c28',
 
-  border: 'rgba(255,255,255,0.04)',
-  border2: 'rgba(255, 255, 255, 0.1)',
+  border: 'rgba(80, 80, 160, 0.25)',
+  border2: 'rgba(80, 80, 160, 0.4)',
 
-  icon_yellow: '#FFBA33',
+  icon_yellow: '#ffd700',
 
   brc20_deploy: '#233933',
   brc20_transfer: '#375e4d',
