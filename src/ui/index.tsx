@@ -19,10 +19,13 @@ import { injectRarityStyles } from './components/RarityBadge';
 import { AppDimensions } from './components/Responsive';
 import AsyncMainRoute from './pages/MainRoute';
 import store from './state';
+import '@/ui/styles/premium.less';
+import { initChainTheme } from './theme/chainTheme';
 import { WalletProvider } from './utils';
 
-// Inject rarity glow CSS animations
+// Initialize premium UI
 injectRarityStyles();
+initChainTheme();
 
 // disabled sentry
 // Sentry.init({

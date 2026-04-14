@@ -23,9 +23,17 @@ export interface RarityResult {
   label: string;
 }
 
-const HALVING_INTERVAL = 840000;
+const DEFAULT_HALVING = 840000;
 const DIFF_ADJUSTMENT = 2016;
 const CYCLE_EPOCHS = 6;
+
+/** Halving intervals per chain */
+export const CHAIN_HALVINGS: Record<string, number> = {
+  VTC: 840000,
+  BTC: 210000,
+  LTC: 840000,
+  DOGE: 100000,
+};
 
 export const RARITY_COLORS: Record<RarityTier, { color: string; glow: string; bg: string }> = {
   mythic: { color: '#ff5252', glow: 'rgba(244,67,54,0.5)', bg: 'rgba(244,67,54,0.15)' },
@@ -45,8 +53,8 @@ export const RARITY_ICONS: Record<RarityTier, string> = {
   common: '⚪',
 };
 
-export function computeRarity(blockHeight: number, unitIndex = 0): RarityResult {
-  const H = HALVING_INTERVAL;
+export function computeRarity(blockHeight: number, unitIndex = 0, chainId = 'VTC'): RarityResult {
+  const H = CHAIN_HALVINGS[chainId] || DEFAULT_HALVING;
   const D = DIFF_ADJUSTMENT;
 
   let tier: RarityTier = 'common';
@@ -107,15 +115,17 @@ export function computeRarity(blockHeight: number, unitIndex = 0): RarityResult 
  * Estimate block height from sat number (for display purposes).
  * Vertcoin: 50 VTC per block for first 840K, then 25, then 12.5, etc.
  */
-export function estimateBlockFromSat(satNumber: number): number {
+export function estimateBlockFromSat(satNumber: number, chainId = 'VTC'): number {
+  const halving = CHAIN_HALVINGS[chainId] || DEFAULT_HALVING;
+  const initialSubsidy = chainId === 'BTC' ? 50 * 1e8 : chainId === 'DOGE' ? 10000 * 1e8 : 50 * 1e8;
   let remaining = satNumber;
   let height = 0;
-  let subsidy = 50 * 1e8; // 50 VTC in vertoshis
+  let subsidy = initialSubsidy;
 
   for (let epoch = 0; epoch < 34; epoch++) {
-    const epochSats = subsidy * HALVING_INTERVAL;
+    const epochSats = subsidy * halving;
     if (remaining < epochSats) {
-      height = epoch * HALVING_INTERVAL + Math.floor(remaining / subsidy);
+      height = epoch * halving + Math.floor(remaining / subsidy);
       break;
     }
     remaining -= epochSats;
