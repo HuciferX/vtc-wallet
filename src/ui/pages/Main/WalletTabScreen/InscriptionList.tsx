@@ -85,9 +85,7 @@ export function InscriptionList() {
   });
 
   const demoRares = [
-    { height: 0, tier: 'mythic' as const, label: 'Genesis Vertoshi', desc: 'Block 0 · Sat #0' },
-    { height: 840001, tier: 'uncommon' as const, label: 'Golden Block #1', desc: 'Block 840,001 · Post-halving' },
-    { height: 22222, tier: 'uncommon' as const, label: 'Palindrome + Black Sat', desc: 'Block 22,222' },
+    { height: 840001, tier: 'uncommon' as const, label: '🏆 Golden Block #1', desc: 'Block 840,001 · First block after halving · All vertoshis in this block are special' },
   ];
 
   return (
