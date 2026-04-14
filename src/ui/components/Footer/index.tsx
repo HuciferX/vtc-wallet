@@ -21,7 +21,7 @@ export function Footer(props: FooterProps) {
   const footerStyle = useMemo(() => {
     return {
       ...$footerBaseStyle,
-      backgroundColor: isSidePanel ? '#070606' : undefined,
+      backgroundColor: isSidePanel ? '#08081e' : undefined,
       width: isSidePanel ? '100%' : undefined
     };
   }, [isSidePanel]);

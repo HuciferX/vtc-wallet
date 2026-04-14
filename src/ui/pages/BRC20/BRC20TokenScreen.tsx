@@ -186,8 +186,8 @@ function BRC20TokenHistory(props: { ticker: string; displayName?: string }) {
                       <Text text={item.mainTitle} />
 
                       {item.pending ? (
-                        <Row style={{ backgroundColor: 'rgba(244, 182, 44, 0.15)', borderRadius: 4 }} px="md" py="xs">
-                          <Text text={t('history_pending')} style={{ color: 'rgba(244, 182, 44, 0.85)' }} size="xs" />
+                        <Row style={{ backgroundColor: 'rgba(0, 229, 255, 0.15)', borderRadius: 4 }} px="md" py="xs">
+                          <Text text={t('history_pending')} style={{ color: 'rgba(0, 229, 255, 0.85)' }} size="xs" />
                         </Row>
                       ) : null}
                     </Row>
@@ -448,11 +448,11 @@ export default function BRC20TokenScreen() {
                 showOrigin
                 color={'ticker_color2'}
               />
-              <Row style={{ backgroundColor: 'rgba(244, 182, 44, 0.15)', borderRadius: 4 }} px="md" py="sm">
+              <Row style={{ backgroundColor: 'rgba(0, 229, 255, 0.15)', borderRadius: 4 }} px="md" py="sm">
                 {isBrc20Prog ? (
-                  <Text text={'brc2.0'} style={{ color: 'rgba(244, 182, 44, 0.85)' }} />
+                  <Text text={'brc2.0'} style={{ color: 'rgba(0, 229, 255, 0.85)' }} />
                 ) : (
-                  <Text text={'brc-20'} style={{ color: 'rgba(244, 182, 44, 0.85)' }} />
+                  <Text text={'brc-20'} style={{ color: 'rgba(0, 229, 255, 0.85)' }} />
                 )}
               </Row>
             </Row>

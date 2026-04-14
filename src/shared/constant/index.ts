@@ -236,7 +236,7 @@ export const CHAINS_MAP: { [key: string]: TypeChain } = {
     enum: ChainType.BITCOIN_MAINNET,
     label: 'Vertcoin',
     iconLabel: 'Vertcoin',
-    icon: './images/artifacts/bitcoin-mainnet.svg',
+    icon: './images/artifacts/vertcoin-mainnet.svg',
     unit: 'VTC',
     networkType: NetworkType.MAINNET,
     endpoints: ['http://127.0.0.1:3080'],

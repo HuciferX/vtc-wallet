@@ -102,7 +102,7 @@ function MyItem({ group, index, onItemClick }: MyItemProps) {
       <Text
         text={group.date}
         color="textDim"
-        style={{ position: 'sticky', top: 0, backgroundColor: '#070606', marginLeft: 16 }}
+        style={{ position: 'sticky', top: 0, backgroundColor: '#08081e', marginLeft: 16 }}
         py={'md'}
       />
       <Column gap={'zero'}>

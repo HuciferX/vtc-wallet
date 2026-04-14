@@ -271,7 +271,7 @@ export default function MergeCAT20Screen() {
               borderWidth: 1,
               borderRadius: 10,
               borderColor: '#F4B62C59',
-              backgroundColor: 'rgba(244, 182, 44, 0.08)'
+              backgroundColor: 'rgba(0, 229, 255, 0.08)'
             }}>
             <Column mx="md" my="md">
               <Text

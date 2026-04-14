@@ -44,13 +44,13 @@ function StatusTag({ status }: { status: 'Open' | 'Closed' | 'Pending' }) {
   const backgroundColors = {
     Open: 'rgba(124, 219, 152, 0.1)',
     Closed: 'rgba(255, 255, 255, 0.1)',
-    Pending: 'rgba(244, 182, 44, 0.1)'
+    Pending: 'rgba(0, 229, 255, 0.1)'
   };
 
   const textColors = {
     Open: 'rgba(124, 219, 152, 0.85)',
     Closed: 'rgba(255, 255, 255, 0.65)',
-    Pending: 'rgba(244, 182, 44, 0.85)'
+    Pending: 'rgba(0, 229, 255, 0.85)'
   };
 
   const statusToTranslationKey = {

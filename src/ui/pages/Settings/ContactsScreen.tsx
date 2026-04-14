@@ -538,8 +538,8 @@ export default function ContactsScreen() {
           <Column gap="lg" style={{ flex: filteredContacts.length === 0 ? 1 : 'unset' }}>
             <div
               style={{
-                backgroundColor: '#2a2626',
-                border: '1px solid #2a2626',
+                backgroundColor: '#0c0c28',
+                border: '1px solid #0c0c28',
                 borderRadius: 8,
                 padding: '0 16px',
                 display: 'flex',

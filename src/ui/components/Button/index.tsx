@@ -156,13 +156,13 @@ const $viewPresets = {
   }) as CSSProperties,
 
   homeGold: Object.assign({}, $baseViewStyle, {
-    backgroundColor: 'rgba(244, 182, 44, 0.10)',
+    backgroundColor: 'rgba(0, 229, 255, 0.10)',
     minWidth: 64,
     minHeight: 64,
     flexDirection: 'column',
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: 'rgba(244, 182, 44, 0.25)',
+    borderColor: 'rgba(0, 229, 255, 0.25)',
     padding: 5,
     marginRight: 5,
     marginLeft: 5
@@ -212,7 +212,7 @@ const $viewPresets = {
 
 const $hoverViewPresets: Record<Presets, CSSProperties> = {
   default: {
-    backgroundColor: '#383535'
+    backgroundColor: '#101035'
   },
   primary: {
     backgroundColor: colors.yellow_dark
@@ -227,21 +227,21 @@ const $hoverViewPresets: Record<Presets, CSSProperties> = {
     backgroundColor: 'rgba(245, 84, 84, 0.15)'
   },
   bar: {
-    backgroundColor: '#383535'
+    backgroundColor: '#101035'
   },
   defaultV2: {},
   primaryV2: {
     backgroundColor: colors.yellow_dark
   },
   home: {
-    backgroundColor: '#383535'
+    backgroundColor: '#101035'
   },
   'brc20-action': {
-    backgroundColor: '#383535'
+    backgroundColor: '#101035'
   },
   homeGold: {
-    backgroundColor: 'rgba(244, 182, 44, 0.20)',
-    borderColor: 'rgba(244, 182, 44, 0.40)'
+    backgroundColor: 'rgba(0, 229, 255, 0.20)',
+    borderColor: 'rgba(0, 229, 255, 0.40)'
   },
   minimal: {
     backgroundColor: 'rgba(255,124,42,0.1)'
@@ -250,7 +250,7 @@ const $hoverViewPresets: Record<Presets, CSSProperties> = {
     backgroundColor: 'rgba(255, 124, 42, 1)'
   },
   swap: {
-    backgroundColor: '#383535'
+    backgroundColor: '#101035'
   }
 };
 

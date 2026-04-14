@@ -511,7 +511,7 @@ function SearchInput(props: InputProps) {
         {},
         $baseContainerStyle,
         {
-          backgroundColor: '#2a2626',
+          backgroundColor: '#0c0c28',
           border: '1px solid #C08F23',
           borderRadius: 8,
           padding: 0,

@@ -90,7 +90,7 @@ class ErrorBoundaryComponent extends React.Component<ErrorBoundaryProps> {
                     borderRadius: '12px',
                     height: '48px',
                     width: '280px',
-                    backgroundColor: '#262222',
+                    backgroundColor: '#0c0c28',
                     borderColor: 'transparent'
                   }}
                   onClick={this.refresh}
