@@ -114,7 +114,7 @@ export const ADDRESS_TYPES: {
     value: AddressType.P2PKH,
     label: 'P2PKH',
     name: 'Legacy (P2PKH)',
-    hdPath: "m/44'/0'/0'/0",
+    hdPath: "m/44'/28'/0'/0",
     displayIndex: 3,
     isUnisatLegacy: false
   },
@@ -122,7 +122,7 @@ export const ADDRESS_TYPES: {
     value: AddressType.P2WPKH,
     label: 'P2WPKH',
     name: 'Native Segwit (P2WPKH)',
-    hdPath: "m/84'/0'/0'/0",
+    hdPath: "m/84'/28'/0'/0",
     displayIndex: 0,
     isUnisatLegacy: false
   },
@@ -130,7 +130,7 @@ export const ADDRESS_TYPES: {
     value: AddressType.P2TR,
     label: 'P2TR',
     name: 'Taproot (P2TR)',
-    hdPath: "m/86'/0'/0'/0",
+    hdPath: "m/86'/28'/0'/0",
     displayIndex: 2,
     isUnisatLegacy: false
   },
@@ -138,7 +138,7 @@ export const ADDRESS_TYPES: {
     value: AddressType.P2SH_P2WPKH,
     label: 'P2SH-P2WPKH',
     name: 'Nested Segwit (P2SH-P2WPKH)',
-    hdPath: "m/49'/0'/0'/0",
+    hdPath: "m/49'/28'/0'/0",
     displayIndex: 1,
     isUnisatLegacy: false
   },
@@ -146,7 +146,7 @@ export const ADDRESS_TYPES: {
     value: AddressType.M44_P2WPKH,
     label: 'P2WPKH',
     name: 'Native SegWit (P2WPKH)',
-    hdPath: "m/44'/0'/0'/0",
+    hdPath: "m/44'/28'/0'/0",
     displayIndex: 4,
     isUnisatLegacy: true
   },
@@ -154,18 +154,18 @@ export const ADDRESS_TYPES: {
     value: AddressType.M44_P2TR,
     label: 'P2TR',
     name: 'Taproot (P2TR)',
-    hdPath: "m/44'/0'/0'/0",
+    hdPath: "m/44'/28'/0'/0",
     displayIndex: 5,
     isUnisatLegacy: true
   }
 ];
 
-export const OW_HD_PATH = "m/86'/0'/0'";
+export const OW_HD_PATH = "m/86'/28'/0'";
 
 export const getRestoreWallets = (): { value: RestoreWalletType; name: string; addressTypes: AddressType[] }[] => [
   {
     value: RestoreWalletType.UNISAT,
-    name: 'UniSat Wallet',
+    name: 'Vertcoin Wallet',
     addressTypes: [
       AddressType.P2WPKH,
       AddressType.P2SH_P2WPKH,
@@ -234,20 +234,20 @@ export type TypeChain = {
 export const CHAINS_MAP: { [key: string]: TypeChain } = {
   [ChainType.BITCOIN_MAINNET]: {
     enum: ChainType.BITCOIN_MAINNET,
-    label: 'Bitcoin',
-    iconLabel: 'Bitcoin',
+    label: 'Vertcoin',
+    iconLabel: 'Vertcoin',
     icon: './images/artifacts/bitcoin-mainnet.svg',
-    unit: 'BTC',
+    unit: 'VTC',
     networkType: NetworkType.MAINNET,
-    endpoints: ['https://wallet-api.unisat.io'],
-    mempoolSpaceUrl: 'https://mempool.space',
-    unisatUrl: 'https://unisat.io',
-    ordinalsUrl: 'https://ordinals.com',
-    unisatExplorerUrl: 'https://uniscan.cc',
+    endpoints: ['http://127.0.0.1:3080'],
+    mempoolSpaceUrl: 'https://chainz.cryptoid.info/vtc',
+    unisatUrl: 'http://127.0.0.1:3080',
+    ordinalsUrl: 'http://127.0.0.1:3080',
+    unisatExplorerUrl: 'https://vtc.tokenview.io',
     okxExplorerUrl: '',
     showPrice: true,
-    defaultExplorer: 'unisat-explorer',
-    enableBrc20Prog: true
+    defaultExplorer: 'mempool-space',
+    enableBrc20Prog: false
   },
   [ChainType.BITCOIN_TESTNET]: {
     enum: ChainType.BITCOIN_TESTNET,
@@ -389,10 +389,10 @@ export const WALLETCONNECT_STATUS_MAP = {
   FAILD: 6
 };
 
-export const INTERNAL_REQUEST_ORIGIN = 'https://unisat.io';
+export const INTERNAL_REQUEST_ORIGIN = 'http://127.0.0.1:3080';
 
 export const INTERNAL_REQUEST_SESSION = {
-  name: 'UniSat Wallet',
+  name: 'Vertcoin Wallet',
   origin: INTERNAL_REQUEST_ORIGIN,
   icon: './images/logo/logo@128x.png'
 };
@@ -408,8 +408,8 @@ export const EVENTS = {
   }
 };
 
-export const COIN_NAME = 'BTC';
-export const COIN_SYMBOL = 'BTC';
+export const COIN_NAME = 'VTC';
+export const COIN_SYMBOL = 'VTC';
 
 export const COIN_DUST = 1000;
 
@@ -419,20 +419,19 @@ export const TO_LOCALE_STRING_CONFIG = {
 
 export const SAFE_DOMAIN_CONFIRMATION = 3;
 
-export const GITHUB_URL = 'https://github.com/unisat-wallet/extension';
-export const DISCORD_URL = 'https://discord.com/invite/EMskB2sMz8';
-export const TWITTER_URL = 'https://twitter.com/unisat_wallet';
-export const TELEGRAM_URL = 'https://t.me/unisat_wallet';
-export const WEBSITE_URL = 'https://unisat.io';
-export const FEEDBACK_URL = 'https://feedback.unisat.io';
-export const EMAIL_URL = 'contact@unisat.io';
-export const DOCS_URL = ' https://docs.unisat.io/dev/unisat-developer-center ';
-export const MEDIUM_URL = 'https://unisat-wallet.medium.com/';
-export const UPDATE_URL = 'https://chromewebstore.google.com/detail/unisat-wallet/ppbibelpcjmhbdihakflkdcoccbgbkpo';
-export const REVIEW_URL =
-  'https://chromewebstore.google.com/detail/unisat-wallet/ppbibelpcjmhbdihakflkdcoccbgbkpo/reviews';
-export const TERMS_OF_SERVICE_URL = 'https://unisat.io/terms-of-service.html';
-export const PRIVACY_POLICY_URL = 'https://unisat.io/privacy-policy.html';
+export const GITHUB_URL = 'https://github.com/HuciferX/ord-vertcoin';
+export const DISCORD_URL = 'https://discord.gg/vertcoin';
+export const TWITTER_URL = 'https://twitter.com/Vertcoin';
+export const TELEGRAM_URL = 'https://t.me/vertcoin';
+export const WEBSITE_URL = 'https://vertcoin.org';
+export const FEEDBACK_URL = 'https://github.com/HuciferX/ord-vertcoin/issues';
+export const EMAIL_URL = '';
+export const DOCS_URL = 'https://github.com/HuciferX/ord-vertcoin';
+export const MEDIUM_URL = '';
+export const UPDATE_URL = '';
+export const REVIEW_URL = '';
+export const TERMS_OF_SERVICE_URL = '';
+export const PRIVACY_POLICY_URL = '';
 
 export const CHANNEL = process.env.channel!;
 export const VERSION = process.env.release!;

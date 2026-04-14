@@ -552,7 +552,8 @@ class CosmJSOfflineSigner {
 
 declare global {
   interface Window {
-    unisat: UnisatProvider;
+    vertcoin: UnisatProvider;
+    unisat: UnisatProvider; // backward compat
   }
 }
 
@@ -568,7 +569,7 @@ function defineUnwritablePropertyIfPossible(o: any, p: string, value: any) {
       o[p] = value;
     }
   } else {
-    console.warn(`Failed to inject ${p} from unisat. Probably, other wallet is trying to intercept UniSat Wallet`);
+    console.warn(`Failed to inject ${p} from vertcoin wallet.`);
   }
 }
 
@@ -582,16 +583,19 @@ const providerProxy = new Proxy(provider, {
 
     // Block access to methods starting with underscore or Symbol methods
     if ((typeof prop === 'string' && prop.startsWith('_')) || prop === requestMethodKey) {
-      console.warn(`[UniSat] Attempted access to private method: ${String(prop)} is not allowed for security reasons`);
+      console.warn(`[Vertcoin Wallet] Attempted access to private method: ${String(prop)} is not allowed for security reasons`);
       return undefined;
     }
     return target[prop];
   }
 });
 
-defineUnwritablePropertyIfPossible(window, 'unisat', providerProxy);
+// Vertcoin provider — marketplace calls window.vertcoin.requestAccounts()
+defineUnwritablePropertyIfPossible(window, 'vertcoin', providerProxy);
 
-// Many wallets occupy the window.unisat namespace, so we need to use a different namespace to avoid conflicts.
+// Also expose as window.unisat for backward compatibility with tools expecting UniSat API shape
+defineUnwritablePropertyIfPossible(window, 'unisat', providerProxy);
 defineUnwritablePropertyIfPossible(window, 'unisat_wallet', providerProxy);
 
-window.dispatchEvent(new Event('unisat#initialized'));
+window.dispatchEvent(new Event('vertcoin#initialized'));
+window.dispatchEvent(new Event('unisat#initialized')); // backward compat
