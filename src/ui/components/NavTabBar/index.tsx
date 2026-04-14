@@ -10,8 +10,9 @@ import { Icon, IconTypes } from '../Icon';
 
 export function NavTabBar({ tab }: { tab: TabOption }) {
   return (
-    <Grid columns={3} style={{ width: '100%', height: '67.5px', backgroundColor: colors.bg2 }}>
+    <Grid columns={4} style={{ width: '100%', height: '67.5px', backgroundColor: colors.bg2 }}>
       <TabButton tabName="home" icon="unisat" isActive={tab === 'home'} />
+      <TabButton tabName="swap" icon="swap_swap" isActive={tab === 'swap'} />
       <TabButton tabName="discover" icon="compass" isActive={tab === 'discover'} />
       <TabButton tabName="settings" icon="settings" isActive={tab === 'settings'} />
     </Grid>
@@ -29,6 +30,8 @@ function TabButton({ tabName, icon, isActive }: { tabName: TabOption; icon: Icon
       onClick={(e) => {
         if (tabName === 'home') {
           navigate('MainScreen');
+        } else if (tabName === 'swap') {
+          navigate('SwapTabScreen');
         } else if (tabName === 'discover') {
           navigate('DiscoverTabScreen');
         } else if (tabName === 'settings') {

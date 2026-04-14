@@ -46,6 +46,7 @@ import AppTabScrren from './Main/AppTabScreen';
 import BoostScreen from './Main/BoostScreen';
 import DiscoverTabScreen from './Main/DiscoverTabScreen';
 import SettingsTabScreen from './Main/SettingsTabScreen';
+import SwapTabScreen from './Main/SwapTabScreen';
 import WalletTabScreen from './Main/WalletTabScreen';
 import WelcomeScreen from './Main/WelcomeScreen';
 import OrdinalsInscriptionScreen from './Ordinals/OrdinalsInscriptionScreen';
@@ -99,6 +100,10 @@ export const routes = {
   AppTabScrren: {
     path: '/app',
     element: <AppTabScrren />
+  },
+  SwapTabScreen: {
+    path: '/swap',
+    element: <SwapTabScreen />
   },
   SettingsTabScreen: {
     path: '/settings',
