@@ -1,6 +1,6 @@
 {
   "externally_connectable": {
-    "matches": ["https://unisat.io/*"],
+    "matches": ["http://127.0.0.1/*", "https://vertcoin.org/*"],
     "ids": ["*"]
   },
   "minimum_chrome_version": "88"

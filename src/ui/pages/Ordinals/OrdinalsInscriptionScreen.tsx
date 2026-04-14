@@ -3,8 +3,10 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
 import { Inscription } from '@/shared/types';
+import { computeRarity, estimateBlockFromSat } from '@/shared/utils/rarity';
 import { Button, Column, Content, Header, Icon, Layout, Row, Text } from '@/ui/components';
 import InscriptionPreview from '@/ui/components/InscriptionPreview';
+import { RarityBadge } from '@/ui/components/RarityBadge';
 import { Line } from '@/ui/components/Line';
 import { Section } from '@/ui/components/Section';
 import { Tabs } from '@/ui/components/Tabs';
@@ -184,6 +186,13 @@ export default function OrdinalsInscriptionScreen() {
             <InscriptionPreview data={inscription} preset="large" />
           </Row>
 
+          {/* Rarity Badge */}
+          {inscription.utxoHeight != null && (
+            <Row justifyCenter mt="sm">
+              <RarityBadge blockHeight={inscription.utxoHeight} size="lg" />
+            </Row>
+          )}
+
           {isLoadingDetails && (
             <Row justifyCenter my="sm" gap="xs">
               <Icon size={fontSizes.lg} color="gold">
@@ -282,6 +291,16 @@ function Details({ inscription, isLoading }: { inscription: Inscription; isLoadi
         backgroundColor: 'rgba(255,255,255,0.08)',
         borderRadius: 15
       }}>
+      {/* Rarity Section */}
+      {inscription.utxoHeight != null && (
+        <>
+          <Section title="Rarity" value="" />
+          <Row px="md" pb="sm">
+            <RarityBadge blockHeight={inscription.utxoHeight} size="md" />
+          </Row>
+          <Line />
+        </>
+      )}
       <Section title={t('inscription_id')} value={inscription.inscriptionId} />
       <Line />
       <Section title={t('inscription_address')} value={inscription.address} />

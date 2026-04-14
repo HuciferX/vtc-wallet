@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { Inscription, RawTxInfo } from '@/shared/types';
 import { Button, Column, Content, Header, Input, Layout, Row, Text } from '@/ui/components';
+import { RarityBadge, RarityWarning } from '@/ui/components/RarityBadge';
 import { useTools } from '@/ui/components/ActionComponent';
 import { FeeRateBar } from '@/ui/components/FeeRateBar';
 import InscriptionPreview from '@/ui/components/InscriptionPreview';
@@ -153,6 +154,11 @@ export default function SendOrdinalsInscriptionScreen() {
               ))}
             </Row>
           </Row>
+
+          {/* Rarity warning for rare vertoshis */}
+          {inscription.utxoHeight != null && (
+            <RarityWarning blockHeight={inscription.utxoHeight} />
+          )}
 
           <Input
             preset="address"

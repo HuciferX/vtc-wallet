@@ -15,10 +15,17 @@ import '@/ui/styles/global.less';
 
 import { I18nProvider } from './app/contexts/I18nContext';
 import { ActionComponentProvider } from './components/ActionComponent';
+import { injectRarityStyles } from './components/RarityBadge';
 import { AppDimensions } from './components/Responsive';
 import AsyncMainRoute from './pages/MainRoute';
 import store from './state';
+import '@/ui/styles/premium.less';
+import { initChainTheme } from './theme/chainTheme';
 import { WalletProvider } from './utils';
+
+// Initialize premium UI
+injectRarityStyles();
+initChainTheme();
 
 // disabled sentry
 // Sentry.init({

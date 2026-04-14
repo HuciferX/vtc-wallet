@@ -1,7 +1,7 @@
 {
-  "appName": { "message": "UniSat Wallet" },
+  "appName": { "message": "Vertcoin Wallet" },
   "appDescription": {
-    "message": "Inscribe and store your inscriptions in the world's first open-source Ordinals Chrome wallet!"
+    "message": "The first Ordinals wallet for Vertcoin. Inscribe, store, and trade vertoshis with rarity badges."
   },
   "receive": {
     "message": "Receive"
