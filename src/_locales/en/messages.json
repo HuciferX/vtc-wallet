@@ -1,7 +1,7 @@
 {
-  "appName": { "message": "Vertcoin Wallet" },
+  "appName": { "message": "Universal Wallet" },
   "appDescription": {
-    "message": "The first Ordinals wallet for Vertcoin. Inscribe, store, and trade vertoshis with rarity badges."
+    "message": "The universal ordinals wallet for Vertcoin, Bitcoin, Litecoin & Dogecoin. Inscribe, store, and trade vertoshis with rarity badges."
   },
   "receive": {
     "message": "Receive"

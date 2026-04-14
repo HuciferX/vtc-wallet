@@ -1,6 +1,6 @@
-# ⛏️ Vertcoin Wallet
+# 🌐 Universal Wallet
 
-The first ordinals wallet for Vertcoin, Litecoin, Bitcoin, and Dogecoin — with rarity badges that glow.
+The universal ordinals wallet for Vertcoin, Litecoin, Bitcoin, and Dogecoin — with rarity badges that glow.
 
 ![Version](https://img.shields.io/badge/version-0.2.0-green) ![Chains](https://img.shields.io/badge/chains-VTC%20%7C%20BTC%20%7C%20LTC%20%7C%20DOGE-blue) ![Tests](https://img.shields.io/badge/tests-184%2F184-brightgreen)
 
@@ -41,7 +41,7 @@ Works on **Chrome, Brave, Edge** — Windows, Mac, and Linux.
 
 ### Step 4: Pin it
 
-Click the puzzle piece icon (🧩) in your toolbar → find "Vertcoin Wallet" → click the pin 📌
+Click the puzzle piece icon (🧩) in your toolbar → find "Universal Wallet" → click the pin 📌
 
 ### Step 5: Create your wallet
 

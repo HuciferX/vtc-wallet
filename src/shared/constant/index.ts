@@ -165,7 +165,7 @@ export const OW_HD_PATH = "m/86'/28'/0'";
 export const getRestoreWallets = (): { value: RestoreWalletType; name: string; addressTypes: AddressType[] }[] => [
   {
     value: RestoreWalletType.UNISAT,
-    name: 'Vertcoin Wallet',
+    name: 'Universal Wallet',
     addressTypes: [
       AddressType.P2WPKH,
       AddressType.P2SH_P2WPKH,
@@ -392,7 +392,7 @@ export const WALLETCONNECT_STATUS_MAP = {
 export const INTERNAL_REQUEST_ORIGIN = 'http://127.0.0.1:3080';
 
 export const INTERNAL_REQUEST_SESSION = {
-  name: 'Vertcoin Wallet',
+  name: 'Universal Wallet',
   origin: INTERNAL_REQUEST_ORIGIN,
   icon: './images/logo/logo@128x.png'
 };
