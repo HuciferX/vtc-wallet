@@ -232,6 +232,7 @@ export type TypeChain = {
 };
 
 export const CHAINS_MAP: { [key: string]: TypeChain } = {
+  // ⛏️ Vertcoin (primary chain — green)
   [ChainType.BITCOIN_MAINNET]: {
     enum: ChainType.BITCOIN_MAINNET,
     label: 'Vertcoin',
@@ -249,93 +250,61 @@ export const CHAINS_MAP: { [key: string]: TypeChain } = {
     defaultExplorer: 'mempool-space',
     enableBrc20Prog: false
   },
+  // ₿ Bitcoin (orange)
   [ChainType.BITCOIN_TESTNET]: {
     enum: ChainType.BITCOIN_TESTNET,
-    label: 'Bitcoin Testnet',
+    label: 'Bitcoin',
     iconLabel: 'Bitcoin',
-    icon: './images/artifacts/bitcoin-testnet.svg',
-    unit: 'tBTC',
-    networkType: NetworkType.TESTNET,
-    endpoints: ['https://wallet-api-testnet.unisat.io'],
-    mempoolSpaceUrl: 'https://mempool.space/testnet',
-    unisatUrl: 'https://testnet.unisat.io',
-    ordinalsUrl: 'https://testnet.ordinals.com',
-    unisatExplorerUrl: '',
+    icon: './images/artifacts/bitcoin-mainnet.svg',
+    unit: 'BTC',
+    networkType: NetworkType.MAINNET,
+    endpoints: ['https://wallet-api.unisat.io'],
+    mempoolSpaceUrl: 'https://mempool.space',
+    unisatUrl: 'https://unisat.io',
+    ordinalsUrl: 'https://ordinals.com',
+    unisatExplorerUrl: 'https://uniscan.cc',
     okxExplorerUrl: '',
-    showPrice: false,
+    showPrice: true,
     defaultExplorer: 'mempool-space'
   },
-  [ChainType.BITCOIN_TESTNET4]: {
-    enum: ChainType.BITCOIN_TESTNET4,
-    label: 'Bitcoin Testnet4 (Beta)',
-    iconLabel: 'Bitcoin',
-    icon: './images/artifacts/bitcoin-testnet.svg',
-    unit: 'tBTC',
-    networkType: NetworkType.TESTNET,
-    endpoints: ['https://wallet-api-testnet4.unisat.io'],
-    mempoolSpaceUrl: 'https://mempool.space/testnet4',
-    unisatUrl: 'https://testnet4.unisat.io',
-    ordinalsUrl: 'https://testnet4.ordinals.com',
-    unisatExplorerUrl: '',
-    okxExplorerUrl: '',
-    showPrice: false,
-    defaultExplorer: 'mempool-space'
-  },
+  // ⚡ Litecoin (blue)
   [ChainType.BITCOIN_SIGNET]: {
     enum: ChainType.BITCOIN_SIGNET,
-    label: 'Bitcoin Signet',
-    iconLabel: 'Bitcoin',
-    icon: './images/artifacts/bitcoin-signet.svg',
-    unit: 'sBTC',
-    networkType: NetworkType.TESTNET,
-    endpoints: ['https://wallet-api-signet.unisat.io'],
-    mempoolSpaceUrl: 'https://mempool.space/signet',
-    unisatUrl: 'https://signet.unisat.io',
-    ordinalsUrl: 'https://signet.ordinals.com',
-    unisatExplorerUrl: 'https://uniscan.cc/signet',
+    label: 'Litecoin',
+    iconLabel: 'Litecoin',
+    icon: './images/artifacts/litecoin-mainnet.svg',
+    unit: 'LTC',
+    networkType: NetworkType.MAINNET,
+    endpoints: ['https://ordinalslite.com'],
+    mempoolSpaceUrl: 'https://litecoinspace.org',
+    unisatUrl: 'https://ordinalslite.com',
+    ordinalsUrl: 'https://ordinalslite.com',
+    unisatExplorerUrl: 'https://litecoinspace.org',
     okxExplorerUrl: '',
-    showPrice: false,
-    defaultExplorer: 'unisat-explorer',
-    enableBrc20Prog: true
+    showPrice: true,
+    defaultExplorer: 'mempool-space',
+    enableBrc20Prog: false
   },
+  // 🐕 Dogecoin (gold)
   [ChainType.FRACTAL_BITCOIN_MAINNET]: {
     enum: ChainType.FRACTAL_BITCOIN_MAINNET,
-    label: 'Fractal Bitcoin',
-    iconLabel: 'Fractal',
-    icon: './images/artifacts/fractal-mainnet.svg',
-    unit: 'FB',
+    label: 'Dogecoin',
+    iconLabel: 'Dogecoin',
+    icon: './images/artifacts/dogecoin-mainnet.svg',
+    unit: 'DOGE',
     networkType: NetworkType.MAINNET,
-    endpoints: ['https://wallet-api-fractal.unisat.io'],
-    mempoolSpaceUrl: 'https://mempool.fractalbitcoin.io',
-    unisatUrl: 'https://fractal.unisat.io',
-    ordinalsUrl: 'https://ordinals.fractalbitcoin.io',
-    unisatExplorerUrl: 'https://uniscan.cc/fractal',
+    endpoints: ['https://drc-20.org'],
+    mempoolSpaceUrl: 'https://dogechain.info',
+    unisatUrl: 'https://drc-20.org',
+    ordinalsUrl: 'https://drc-20.org',
+    unisatExplorerUrl: 'https://dogechain.info',
     okxExplorerUrl: '',
     isViewTxHistoryInternally: false,
     disable: false,
-    isFractal: true,
+    isFractal: false,
     showPrice: true,
-    defaultExplorer: 'unisat-explorer',
-    enableBrc20SingleStep: true
-  },
-  [ChainType.FRACTAL_BITCOIN_TESTNET]: {
-    enum: ChainType.FRACTAL_BITCOIN_TESTNET,
-    label: 'Fractal Bitcoin Testnet',
-    iconLabel: 'Fractal',
-    icon: './images/artifacts/fractal-testnet.svg',
-    unit: 'tFB',
-    networkType: NetworkType.MAINNET,
-    endpoints: ['https://wallet-api-fractal-testnet.unisat.io'],
-    mempoolSpaceUrl: 'https://mempool-testnet.fractalbitcoin.io',
-    unisatUrl: 'https://fractal-testnet.unisat.io',
-    ordinalsUrl: 'https://ordinals-testnet.fractalbitcoin.io',
-    unisatExplorerUrl: 'https://uniscan.cc/fractal-testnet',
-    okxExplorerUrl: '',
-    isViewTxHistoryInternally: false,
-    isFractal: true,
-    showPrice: false,
-    defaultExplorer: 'unisat-explorer',
-    enableBrc20SingleStep: true
+    defaultExplorer: 'mempool-space',
+    enableBrc20SingleStep: false
   }
 };
 
@@ -352,25 +321,19 @@ export type TypeChainGroup = {
 export const CHAIN_GROUPS: TypeChainGroup[] = [
   {
     type: 'single',
-    chain: CHAINS_MAP[ChainType.BITCOIN_MAINNET]
-  },
-  {
-    type: 'list',
-    label: 'Bitcoin Testnet',
-    icon: './images/artifacts/bitcoin-testnet-all.svg',
-    items: [
-      CHAINS_MAP[ChainType.BITCOIN_TESTNET],
-      CHAINS_MAP[ChainType.BITCOIN_TESTNET4],
-      CHAINS_MAP[ChainType.BITCOIN_SIGNET]
-    ]
+    chain: CHAINS_MAP[ChainType.BITCOIN_MAINNET]  // Vertcoin
   },
   {
     type: 'single',
-    chain: CHAINS_MAP[ChainType.FRACTAL_BITCOIN_MAINNET]
+    chain: CHAINS_MAP[ChainType.BITCOIN_TESTNET]  // Bitcoin
   },
   {
     type: 'single',
-    chain: CHAINS_MAP[ChainType.FRACTAL_BITCOIN_TESTNET]
+    chain: CHAINS_MAP[ChainType.BITCOIN_SIGNET]  // Litecoin
+  },
+  {
+    type: 'single',
+    chain: CHAINS_MAP[ChainType.FRACTAL_BITCOIN_MAINNET]  // Dogecoin
   }
 ];
 

@@ -10,7 +10,7 @@ The universal ordinals wallet for Vertcoin, Litecoin, Bitcoin, and Dogecoin — 
 
 ### Step 1: Download
 
-👉 **[Download universal-wallet-v0.4.0-chrome.zip](https://github.com/HuciferX/vtc-wallet/releases/download/v0.4.0/universal-wallet-v0.4.0-chrome.zip)** (5.8 MB)
+👉 **[Download universal-wallet-v0.4.1-chrome.zip](https://github.com/HuciferX/vtc-wallet/releases/download/v0.4.1/universal-wallet-v0.4.1-chrome.zip)** (5.8 MB)
 
 Works on **Chrome, Brave, Edge** — Windows, Mac, and Linux.
 
@@ -18,7 +18,7 @@ Works on **Chrome, Brave, Edge** — Windows, Mac, and Linux.
 
 - **Windows:** Right-click the zip → "Extract All" → pick a folder you'll remember (like Desktop)
 - **Mac:** Double-click the zip → a folder appears in Downloads
-- **Linux:** `unzip universal-wallet-v0.4.0-chrome.zip -d ~/vtc-wallet`
+- **Linux:** `unzip universal-wallet-v0.4.1-chrome.zip -d ~/vtc-wallet`
 
 ### Step 3: Load into your browser
 
