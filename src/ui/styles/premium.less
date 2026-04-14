@@ -2,8 +2,40 @@
    PREMIUM ANIMATIONS — Rare Ordinals Wallet
    ═══════════════════════════════════════════════════════════════ */
 
-/* ── Chain theme transitions (all properties morph on chain switch) ── */
+/* ── Universal Marketplace + Wallet shared design tokens ── */
 :root {
+  /* Base (matches universal-marketplace.html) */
+  --bg: #08081e;
+  --bg2: #0c0c28;
+  --bg3: #101035;
+  --text: #e8eaf6;
+  --text-soft: rgba(232,234,246,.6);
+  --text-dim: rgba(232,234,246,.3);
+  --border: rgba(80,80,160,.25);
+  --card: rgba(12,12,40,.92);
+  /* Chain colors (same as marketplace) */
+  --sol: #9945ff;
+  --btc: #f7931a;
+  --ltc: #345d9d;
+  --doge: #c2a633;
+  --vtc: #1b5e20;
+  --vtc2: #4caf50;
+  /* Rarity (same as marketplace) */
+  --r-common: #9e9e9e;
+  --r-uncommon: #4caf50;
+  --r-rare: #2196f3;
+  --r-epic: #9c27b0;
+  --r-legendary: #ff9800;
+  --r-mythic: #f44336;
+  --r-golden: #ffd700;
+  /* Shared accent */
+  --green: #00e676;
+  --red: #ff5252;
+  --cyan: #00e5ff;
+  --purple: #b47aff;
+  --gold: #ffd700;
+  --pink: #ff6eb4;
+  /* Chain theme (dynamic, set by chainTheme.ts) */
   --chain-primary: #4caf50;
   --chain-accent: #66bb6a;
   --chain-glow: rgba(76,175,80,0.35);
