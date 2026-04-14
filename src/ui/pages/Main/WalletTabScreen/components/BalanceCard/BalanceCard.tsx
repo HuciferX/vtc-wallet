@@ -57,9 +57,8 @@ export function BalanceCard({ accountBalance, disableUtxoTools = true, enableRef
 
   const { openUtxoTools } = useUtxoTools(chain);
 
-  const backgroundImage = chain.isFractal
-    ? './images/artifacts/balance-bg-fb.png'
-    : './images/artifacts/balance-bg-btc.png';
+  // Use the chain's own icon as the decorative background
+  const backgroundImage = chain.icon;
 
   const totalAmount = satoshisToAmount(accountBalance.totalBalance);
   const availableAmount = satoshisToAmount(accountBalance.availableBalance);
@@ -149,7 +148,7 @@ export function BalanceCard({ accountBalance, disableUtxoTools = true, enableRef
             <>
               <span
                 className={chain.enum === ChainType.FRACTAL_BITCOIN_MAINNET ? styles.fb_decimal : styles.decimal}
-                style={{ color: isBtcMainnet ? '#000' : 'rgba(0, 0, 0, 0.45)' }}>
+                style={{ color: 'rgba(232, 234, 246, 0.65)' }}>
                 .{totalAmount.split('.')[1]}
               </span>
               <span className={chain.enum === ChainType.FRACTAL_BITCOIN_MAINNET ? styles.fb_unit : styles.unit}>
