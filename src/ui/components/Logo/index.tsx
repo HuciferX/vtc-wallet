@@ -11,14 +11,16 @@ export function Logo(props: { preset?: 'large' | 'small' }) {
       <Row justifyCenter itemsCenter>
         <Image src="./images/logo/wallet-logo.png" size={fontSizes.xxxl} />
 
-        <Text text="UNISAT" preset="title-bold" size="xxl" disableTranslate />
+        <Text text="UNIVERSAL" preset="title-bold" size="xxl" disableTranslate
+          style={{ background: 'linear-gradient(90deg, #00e5ff, #b47aff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }} />
       </Row>
     );
   } else {
     return (
       <Row justifyCenter itemsCenter>
         <Image src="./images/logo/wallet-logo.png" size={fontSizes.xxl} />
-        <Text text="UNISAT" preset="title-bold" disableTranslate />
+        <Text text="UNIVERSAL" preset="title-bold" disableTranslate
+          style={{ background: 'linear-gradient(90deg, #00e5ff, #b47aff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }} />
       </Row>
     );
   }
