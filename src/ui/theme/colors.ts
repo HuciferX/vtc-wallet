@@ -20,9 +20,9 @@ const palette = {
   green: '#00e676',
   green_light: '#66bb6a',
 
-  yellow_dark: '#d5ac00',
+  yellow_dark: '#0c7c91',
   yellow: '#ffd700',
-  yellow_light: '#fcd226',
+  yellow_light: '#00e5ff',
 
   red_dark: '#c92b40',
   red: '#ff5252',
