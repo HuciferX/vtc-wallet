@@ -3,10 +3,20 @@ import * as bip39 from 'bip39';
 import { AddressType, NetworkType } from '@unisat/wallet-types';
 
 export function getAddressType(address: string, networkType?: NetworkType) {
-  if (address.startsWith('bc1q') || address.startsWith('tb1q')) {
+  // Vertcoin bech32 addresses (vtc1q = P2WPKH, vtc1p = P2TR)
+  if (address.startsWith('vtc1q')) {
+    return AddressType.P2WPKH;
+  } else if (address.startsWith('vtc1p')) {
+    return AddressType.P2TR;
+  // Bitcoin bech32 addresses (bc1q = P2WPKH, bc1p = P2TR)
+  } else if (address.startsWith('bc1q') || address.startsWith('tb1q')) {
     return AddressType.P2WPKH;
   } else if (address.startsWith('bc1p') || address.startsWith('tb1p')) {
     return AddressType.P2TR;
+  // Vertcoin P2PKH starts with 'V'
+  } else if (address.startsWith('V')) {
+    return AddressType.P2PKH;
+  // Bitcoin legacy
   } else if (address.startsWith('1') || address.startsWith('m') || address.startsWith('n')) {
     return AddressType.P2PKH;
   } else if (address.startsWith('3') || address.startsWith('2')) {
@@ -17,6 +27,7 @@ export function getAddressType(address: string, networkType?: NetworkType) {
 }
 
 export function isValidAddress(address: string, networkType?: NetworkType) {
+  // Accept both VTC (vtc1..., V...) and BTC (bc1..., 1..., 3...) addresses
   const addressType = getAddressType(address, networkType);
   if (addressType === AddressType.UNKNOWN) {
     return false;
