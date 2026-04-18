@@ -3,10 +3,11 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
 import { Inscription } from '@/shared/types';
-import { computeRarity, estimateBlockFromSat } from '@/shared/utils/rarity';
+import { computeRarity, estimateBlockFromSat, isRare } from '@/shared/utils/rarity';
 import { Button, Column, Content, Header, Icon, Layout, Row, Text } from '@/ui/components';
 import InscriptionPreview from '@/ui/components/InscriptionPreview';
 import { RarityBadge } from '@/ui/components/RarityBadge';
+import { RareListingPopover } from '@/ui/components/RareListingPopover';
 import { Line } from '@/ui/components/Line';
 import { Section } from '@/ui/components/Section';
 import { Tabs } from '@/ui/components/Tabs';
@@ -49,6 +50,7 @@ export default function OrdinalsInscriptionScreen() {
   const wallet = useWallet();
 
   const [tabKey, setTabKey] = useState(TabKey.DETAILS);
+  const [showRarePopup, setShowRarePopup] = useState(false);
 
   const resetState = useCallback(() => {
     setIsNeedToSplit(false);
@@ -186,12 +188,35 @@ export default function OrdinalsInscriptionScreen() {
             <InscriptionPreview data={inscription} preset="large" />
           </Row>
 
-          {/* Rarity Badge */}
+          {/* Rarity Badge + Rare Detection */}
           {inscription.utxoHeight != null && (
-            <Row justifyCenter mt="sm">
-              <RarityBadge blockHeight={inscription.utxoHeight} size="lg" />
-            </Row>
+            <>
+              <Row justifyCenter mt="sm">
+                <RarityBadge blockHeight={inscription.utxoHeight} size="lg" />
+              </Row>
+              {/* Show "List on Marketplace" button if rare and user owns it */}
+              {withSend && isRare(computeRarity(inscription.utxoHeight, 0)) && (
+                <Row justifyCenter mt="sm">
+                  <Button
+                    text="💰 List on Universal Marketplace"
+                    preset="primary"
+                    onClick={() => setShowRarePopup(true)}
+                  />
+                </Row>
+              )}
+            </>
           )}
+
+          {/* Rare Listing Popover */}
+          <RareListingPopover
+            visible={showRarePopup}
+            inscription={inscription}
+            blockHeight={inscription.utxoHeight}
+            onClose={() => setShowRarePopup(false)}
+            onListed={(id) => {
+              console.log('Listed:', id);
+            }}
+          />
 
           {isLoadingDetails && (
             <Row justifyCenter my="sm" gap="xs">

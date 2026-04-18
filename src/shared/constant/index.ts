@@ -233,6 +233,8 @@ export type TypeChain = {
 
 export const CHAINS_MAP: { [key: string]: TypeChain } = {
   // ⛏️ Vertcoin (primary chain — green)
+  // Ordinals: FULLY SUPPORTED via ord-vertcoin indexer
+  // Explorer: local ord server + universal explorer
   [ChainType.BITCOIN_MAINNET]: {
     enum: ChainType.BITCOIN_MAINNET,
     label: 'Vertcoin',
@@ -244,7 +246,7 @@ export const CHAINS_MAP: { [key: string]: TypeChain } = {
     mempoolSpaceUrl: 'https://chainz.cryptoid.info/vtc',
     unisatUrl: 'http://127.0.0.1:3080',
     ordinalsUrl: 'http://127.0.0.1:3080',
-    unisatExplorerUrl: 'https://vtc.tokenview.io',
+    unisatExplorerUrl: 'http://127.0.0.1:3080',
     okxExplorerUrl: '',
     showPrice: true,
     defaultExplorer: 'mempool-space',

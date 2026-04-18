@@ -2,7 +2,7 @@
 
 The universal ordinals wallet for Vertcoin, Litecoin, Bitcoin, and Dogecoin — with rarity badges that glow.
 
-![Version](https://img.shields.io/badge/version-0.2.0-green) ![Chains](https://img.shields.io/badge/chains-VTC%20%7C%20BTC%20%7C%20LTC%20%7C%20DOGE-blue) ![Tests](https://img.shields.io/badge/tests-184%2F184-brightgreen)
+![Version](https://img.shields.io/badge/version-0.8.0-green) ![Chains](https://img.shields.io/badge/chains-VTC%20%7C%20BTC%20%7C%20LTC%20%7C%20DOGE-blue) ![Tests](https://img.shields.io/badge/tests-192%2F192-brightgreen)
 
 ---
 
@@ -10,7 +10,7 @@ The universal ordinals wallet for Vertcoin, Litecoin, Bitcoin, and Dogecoin — 
 
 ### Step 1: Download
 
-👉 **[Download universal-wallet-v0.6.2-chrome.zip](https://github.com/HuciferX/vtc-wallet/releases/download/v0.6.2/universal-wallet-v0.6.2-chrome.zip)** (5.8 MB)
+↑️ **[Download latest release](https://github.com/HuciferX/vtc-wallet/releases/latest)** (Chrome, Brave, Edge)
 
 Works on **Chrome, Brave, Edge** — Windows, Mac, and Linux.
 
@@ -87,6 +87,32 @@ When you find a rare one, you get a full-screen reveal with confetti. 🎊
 
 ---
 
+## 💰 Marketplace Integration
+
+The wallet detects rare ordinals automatically. When you view a rare inscription you own:
+
+1. A **"💎 RARE ORDINAL DETECTED"** popup appears with the rarity tier and animated glow
+2. You can set a price and **list it for sale on the Universal Marketplace**
+3. The listing creates a non-custodial PSBT sell order — you sign, no intermediary
+4. Your inscription appears on [universalmarketplace.io](https://universalmarketplace.io) for buyers
+
+Inscribing and marketplace listing are controlled by the marketplace operator via the Admin Panel (**Settings > Feature Toggles**).
+
+---
+
+## ⛏️ Address Formats
+
+The wallet generates correct native addresses for each chain:
+
+| Chain | bech32 | Legacy | Example |
+|-------|--------|--------|---------|
+| ⛏️ VTC | `vtc1q...` | `V...` | `vtc1q6q9han9k34qaju7jed5cjpe7z093kyyv7jprss` |
+| ₿ BTC | `bc1q...` | `1...` / `3...` | `bc1qfsfj784stdy68vampjfdf6nc0lymjy7suh373f` |
+| ⚡ LTC | `ltc1q...` | `L...` / `M...` | `ltc1q...` |
+| 🐕 DOGE | `D...` | `A...` | `D...` |
+
+---
+
 ## 🔌 For Developers (dApp Connect)
 
 Websites can connect to the wallet:
@@ -139,4 +165,9 @@ Requires Node.js 18+ and Yarn.
 
 - Forked from [UniSat Wallet](https://github.com/unisat-wallet/extension) (MIT license)
 - Rarity spec: POWX-RARITY-SPEC v1.0
-- Vertcoin port + premium UI: [HuciferX](https://github.com/HuciferX)
+- Vertcoin port + multi-chain addresses + marketplace: [HuciferX](https://github.com/HuciferX)
+- Part of the [Hypatia AI](https://hypatiashard.ai) ecosystem
+
+## License
+
+MIT
