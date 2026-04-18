@@ -3,20 +3,33 @@ import * as bip39 from 'bip39';
 import { AddressType, NetworkType } from '@unisat/wallet-types';
 
 export function getAddressType(address: string, networkType?: NetworkType) {
-  // Vertcoin bech32 addresses (vtc1q = P2WPKH, vtc1p = P2TR)
+  // Vertcoin bech32 (vtc1q = P2WPKH, vtc1p = P2TR)
   if (address.startsWith('vtc1q')) {
     return AddressType.P2WPKH;
   } else if (address.startsWith('vtc1p')) {
     return AddressType.P2TR;
-  // Bitcoin bech32 addresses (bc1q = P2WPKH, bc1p = P2TR)
+  // Litecoin bech32 (ltc1q = P2WPKH, ltc1p = P2TR)
+  } else if (address.startsWith('ltc1q')) {
+    return AddressType.P2WPKH;
+  } else if (address.startsWith('ltc1p')) {
+    return AddressType.P2TR;
+  // Bitcoin bech32 (bc1q = P2WPKH, bc1p = P2TR)
   } else if (address.startsWith('bc1q') || address.startsWith('tb1q')) {
     return AddressType.P2WPKH;
   } else if (address.startsWith('bc1p') || address.startsWith('tb1p')) {
     return AddressType.P2TR;
-  // Vertcoin P2PKH starts with 'V'
+  // Vertcoin P2PKH ('V')
   } else if (address.startsWith('V')) {
     return AddressType.P2PKH;
-  // Bitcoin legacy
+  // Litecoin P2PKH ('L') and P2SH ('M')
+  } else if (address.startsWith('L')) {
+    return AddressType.P2PKH;
+  } else if (address.startsWith('M')) {
+    return AddressType.P2SH_P2WPKH;
+  // Dogecoin P2PKH ('D')
+  } else if (address.startsWith('D') || address.startsWith('A')) {
+    return AddressType.P2PKH;
+  // Bitcoin legacy P2PKH ('1') and P2SH ('3')
   } else if (address.startsWith('1') || address.startsWith('m') || address.startsWith('n')) {
     return AddressType.P2PKH;
   } else if (address.startsWith('3') || address.startsWith('2')) {
